@@ -27,6 +27,13 @@ app.add_middleware(
 )
 
 # -----------------------
+# Root endpoint (health check)
+# -----------------------
+@app.get("/")
+def root():
+    return {"message": "Medical Device Recall Classifier API is running!"}
+
+# -----------------------
 # Input schema
 # -----------------------
 class InputData(BaseModel):
